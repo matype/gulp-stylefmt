@@ -17,7 +17,7 @@ module.exports = function (options) {
     }
 
     try {
-      file.contents = new Buffer(cssfmt(file.contents.toString()).toString());
+      file.contents = new Buffer(cssfmt.process(file.contents.toString()).toString());
       this.push(file);
     } catch (err) {
       this.emit('error', new gutil.PluginError('gulp-cssfmt', err, {fileName: file.path}));

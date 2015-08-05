@@ -19,7 +19,7 @@
   "author": "Masaaki Morishita",
   "license": "MIT",
   "dependencies": {
-    "cssfmt": "^0.3.0",
+    "cssfmt": "^0.4.0",
     "gulp-util": "^3.0.6",
     "through2": "^2.0.0"
   },

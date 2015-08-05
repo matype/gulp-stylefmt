@@ -7,7 +7,7 @@ var gulpCssfmt = require('../');
 it('cssfmt', function (cb) {
   var stream = gulpCssfmt();
   var cssFile = fs.readFileSync('test/fixtures/input.css', 'utf-8');
-  var output = cssfmt(cssFile).toString();
+  var output = cssfmt.process(cssFile);
 
   stream.on('data', function (file) {
     assert.equal(file.contents.toString(), output);
