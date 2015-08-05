@@ -10,6 +10,17 @@ $ npm install gulp-cssfmt
 
 ## Usage
 
+```js
+var gulp = require('gulp');
+var cssfmt = require('gulp-cssfmt');
+
+gulp.task('cssfmt', function () {
+  return gulp.src('src/input.css')
+    .pipe(cssfmt())
+    .pipe(gulp.dest('dist'));
+});
+``
+
 ## License
 
 The MIT License (MIT)
