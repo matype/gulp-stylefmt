@@ -1,0 +1,19 @@
+{
+  "name": "gulp-cssfmt",
+  "version": "0.0.1",
+  "description": "gulp plugin for CSSfmt",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/morishitter/gulp-cssfmt/git"
+  },
+  "keywords": ["gulpplugin","cssfmt","css","format"],
+  "author": "Masaaki Morishita",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+  }
+}
