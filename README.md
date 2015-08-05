@@ -1,11 +1,11 @@
 # gulp-cssfmt [![Build Status](https://travis-ci.org/morishitter/gulp-cssfmt.svg)](https://travis-ci.org/morishitter/gulp-cssfmt)
 
-gulp plugin for CSSfmt
+gulp plugin for [CSSfmt](https://github.com/morishitter/cssfmt)
 
 ## Installation
 
 ```shell
-$ npm install gulp-cssfmt
+$ npm install --save-dev gulp-cssfmt
 ```
 
 ## Usage
