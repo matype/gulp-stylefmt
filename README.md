@@ -19,7 +19,7 @@ gulp.task('stylefmt', function () {
     .pipe(stylefmt())
     .pipe(gulp.dest('dist'));
 });
-``
+```
 
 ## License
 
