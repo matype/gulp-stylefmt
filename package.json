@@ -20,6 +20,8 @@
   "license": "MIT",
   "dependencies": {
     "gulp-util": "^3.0.7",
+    "postcss": "^5.0.21",
+    "postcss-scss": "^0.1.8",
     "stylefmt": "^4.1.1",
     "through2": "^2.0.1"
   },

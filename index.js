@@ -1,5 +1,7 @@
 var gutil = require('gulp-util');
 var through = require('through2');
+var postcss = require('postcss');
+var scss = require('postcss-scss');
 var stylefmt = require('stylefmt');
 
 module.exports = function (options) {
@@ -16,16 +18,9 @@ module.exports = function (options) {
       return;
     }
 
-    // try {
-    //   file.contents = new Buffer(stylefmt.process(file.contents.toString()).toString());
-    //   this.push(file);
-    // } catch (err) {
-    //   this.emit('error', new gutil.PluginError('gulp-stylefmt', err, {fileName: file.path}));
-    // }
-
     var self = this
-    stylefmt
-      .process(file.contents.toString())
+    postcss([stylefmt(options)])
+      .process(file.contents.toString(), { syntax: scss })
       .then(function (result) {
         file.contents = new Buffer(result.css);
         self.push(file);
