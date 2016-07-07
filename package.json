@@ -1,7 +1,7 @@
 {
   "name": "gulp-cssfmt",
   "version": "0.3.0",
-  "description": "gulp plugin for CSSfmt",
+  "description": "gulp plugin for stylefmt",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -12,19 +12,19 @@
   },
   "keywords": [
     "gulpplugin",
-    "cssfmt",
+    "stylefmt",
     "css",
     "format"
   ],
   "author": "Masaaki Morishita",
   "license": "MIT",
   "dependencies": {
-    "cssfmt": "^0.6.0",
-    "gulp-util": "^3.0.6",
-    "through2": "^2.0.0"
+    "gulp-util": "^3.0.7",
+    "stylefmt": "^4.1.1",
+    "through2": "^2.0.1"
   },
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "mocha": "^2.2.5"
+    "gulp": "^3.9.1",
+    "mocha": "^2.5.3"
   }
 }

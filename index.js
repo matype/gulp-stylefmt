@@ -1,6 +1,6 @@
 var gutil = require('gulp-util');
 var through = require('through2');
-var cssfmt = require('cssfmt');
+var stylefmt = require('stylefmt');
 
 module.exports = function (options) {
   options = options || {};
@@ -12,17 +12,28 @@ module.exports = function (options) {
     }
 
     if (file.isStream()) {
-      cb(new gutil.PluginError('gulp-cssfmt', 'Streaming not supported'));
+      cb(new gutil.PluginError('gulp-stylefmt', 'Streaming not supported'));
       return;
     }
 
-    try {
-      file.contents = new Buffer(cssfmt.process(file.contents.toString()).toString());
-      this.push(file);
-    } catch (err) {
-      this.emit('error', new gutil.PluginError('gulp-cssfmt', err, {fileName: file.path}));
-    }
+    // try {
+    //   file.contents = new Buffer(stylefmt.process(file.contents.toString()).toString());
+    //   this.push(file);
+    // } catch (err) {
+    //   this.emit('error', new gutil.PluginError('gulp-stylefmt', err, {fileName: file.path}));
+    // }
 
-    cb();
+    var self = this
+    stylefmt
+      .process(file.contents.toString())
+      .then(function (result) {
+        file.contents = new Buffer(result.css);
+        self.push(file);
+        cb();
+      })
+      .catch(function (err) {
+        this.emit('error', new gutil.PluginError('gulp-cssfmt', err, {fileName: file.path}));
+      });
+
   });
 };

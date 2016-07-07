@@ -1,20 +1,28 @@
 var fs = require('fs');
 var assert = require('assert');
 var gutil = require('gulp-util');
-var cssfmt = require('cssfmt');
-var gulpCssfmt = require('../');
+var stylefmt = require('stylefmt');
+var gulpStylefmt = require('../');
 
-it('cssfmt', function (cb) {
-  var stream = gulpCssfmt();
+it('stylefmt', function (cb) {
+  var stream = gulpStylefmt();
   var cssFile = fs.readFileSync('test/fixtures/input.css', 'utf-8');
-  var output = cssfmt.process(cssFile);
 
-  stream.on('data', function (file) {
-    assert.equal(file.contents.toString(), output);
-    cb();
-  });
+  stylefmt
+    .process(cssFile)
+    .then(function (result) {
+      stream.on('data', function (file) {
+        assert.equal(file.contents.toString(), output);
+      });
 
-  stream.write(new gutil.File({
-    contents: new Buffer(cssFile)
-  }));
+      stream.write(new gutil.File({
+        contents: new Buffer(cssFile)
+      }));
+
+      cb();
+    })
+    .catch(function (e) {
+      cb(e);
+    });
+
 });
