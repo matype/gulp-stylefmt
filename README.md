@@ -1,22 +1,22 @@
-# gulp-cssfmt [![Build Status](https://travis-ci.org/morishitter/gulp-cssfmt.svg)](https://travis-ci.org/morishitter/gulp-cssfmt)
+# gulp-stylefmt [![Build Status](https://travis-ci.org/morishitter/gulp-stylefmt.svg)](https://travis-ci.org/morishitter/gulp-stylefmt)
 
-gulp plugin for [CSSfmt](https://github.com/morishitter/cssfmt)
+gulp plugin for [stylefmt](https://github.com/morishitter/stylefmt)
 
 ## Installation
 
 ```shell
-$ npm install --save-dev gulp-cssfmt
+$ npm install --save-dev gulp-stylefmt
 ```
 
 ## Usage
 
 ```js
 var gulp = require('gulp');
-var cssfmt = require('gulp-cssfmt');
+var stylefmt = require('gulp-stylefmt');
 
-gulp.task('cssfmt', function () {
+gulp.task('stylefmt', function () {
   return gulp.src('src/input.css')
-    .pipe(cssfmt())
+    .pipe(stylefmt())
     .pipe(gulp.dest('dist'));
 });
 ``
@@ -25,4 +25,4 @@ gulp.task('cssfmt', function () {
 
 The MIT License (MIT)
 
-Copyright (c) 2015 Masaaki Morishita
+Copyright (c) 2015 - 2016 Masaaki Morishita
