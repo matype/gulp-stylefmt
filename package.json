@@ -1,6 +1,6 @@
 {
-  "name": "gulp-cssfmt",
-  "version": "0.3.0",
+  "name": "gulp-stylefmt",
+  "version": "1.0.0",
   "description": "gulp plugin for stylefmt",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/morishitter/gulp-cssfmt/git"
+    "url": "git://github.com/morishitter/gulp-stylefmt/git"
   },
   "keywords": [
     "gulpplugin",
