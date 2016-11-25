@@ -20,13 +20,13 @@
   "license": "MIT",
   "dependencies": {
     "gulp-util": "^3.0.7",
-    "postcss": "^5.0.21",
-    "postcss-scss": "^0.1.8",
-    "stylefmt": "^4.1.1",
+    "postcss": "^5.2.6",
+    "postcss-scss": "^0.4.0",
+    "stylefmt": "^5.0.0",
     "through2": "^2.0.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "mocha": "^2.5.3"
+    "mocha": "^3.2.0"
   }
 }
