@@ -19,9 +19,14 @@ module.exports = function (options) {
     }
 
     var self = this
+    var contents = file.contents.toString()
+
     postcss([stylefmt(options)])
-      .process(file.contents.toString(), { syntax: scss })
+      .process(contents, { syntax: scss })
       .then(function (result) {
+        file.stylefmt = {
+          fixed: contents !== result.css
+        }
         file.contents = new Buffer(result.css);
         self.push(file);
         cb();
