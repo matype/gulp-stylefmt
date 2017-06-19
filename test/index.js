@@ -13,6 +13,7 @@ it('stylefmt', function (cb) {
     .then(function (result) {
       stream.on('data', function (file) {
         assert.equal(file.contents.toString(), output);
+        assert.isTrue(file.stylefmt.fixed)
       });
 
       stream.write(new gutil.File({
